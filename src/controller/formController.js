@@ -27,6 +27,20 @@ const getForm = async (req, res) => {
     }
 }
 
+const getFormById = async (req, res) => {
+    try {
+        let id = req.params.id;
+        
+        let form = await formModel.findOne({ _id: id, isDeleted: false });
+        if (!form) return res.status(404).send({ status: false, message: 'no forms found' });
+
+        res.status(200).send({ status: true, message: 'success', data: form });
+
+    } catch (err) {
+        return res.status(500).send({ status: false, message: err.message })
+    }
+}
+
 const updateForm = async (req, res) => {
     try {
         let id = req.params.id;
@@ -64,4 +78,4 @@ const deleteForm = async (req, res) => {
     }
 }
 
-module.exports = { createForm, getForm, updateForm, deleteForm };
+module.exports = { createForm, getForm, updateForm, getFormById, deleteForm };

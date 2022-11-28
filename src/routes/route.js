@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controller/formController')
 
-router.post('/createForm', controller.createForm );
-router.get('/getForm', controller.getForm );
-router.put('/updateForm/:id', controller.updateForm );
+router.post('/form/create', controller.createForm );
+router.get('/', controller.getForm );
+router.get('/form/:id', controller.getFormById );
+router.put('/form/:id/edit', controller.updateForm );
 router.delete('/deleteForm/:id', controller.deleteForm );
 
 // global route>>>>>>>>>>
