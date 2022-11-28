@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "851727f5-2f6e-492b-9f00-ae5263965109",
+		"name": "form-builder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23500526"
+	},
+	"item": [
+		{
+			"name": "create form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Online payment\",\r\n    \"details\":{\r\n        \"full name\":\"nancy george\",\r\n        \"payment type\":\"credit card\",\r\n        \"card number\":\"0481985528561900\",\r\n        \"CVV\":\"196\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/createForm",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createForm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get form",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/getForm",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getForm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Payment\",\r\n    \"details\":{\r\n        \"full name\":\"nancy joe\",\r\n        \"payment type\":\"credit card\",\r\n        \"card number\":\"0481185528561900\",\r\n        \"CVV\":\"106\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/updateForm/638510d1e10ef684402c913e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateForm",
+						"638510d1e10ef684402c913e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete form",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/deleteForm/638510d1e10ef684402c913e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deleteForm",
+						"638510d1e10ef684402c913e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
